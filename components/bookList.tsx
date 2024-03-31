@@ -1,4 +1,4 @@
-import { BOOKLIST_API, BOOK_API } from "@/app/(home)/page";
+import { BOOKLIST_API } from "@/app/constans";
 import Link from "next/link";
 
 interface IBookList {

@@ -1,4 +1,4 @@
-import { BOOK_API } from "@/app/(home)/page";
+import { BOOK_API } from "@/app/constans";
 
 interface IBookCategory {
   rank: number;
