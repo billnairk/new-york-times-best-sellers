@@ -1,10 +1,15 @@
+import Link from "next/link";
 import style from "../styles/navStyle.module.css";
 
 export default function Navigation() {
   return (
     <div className={style.nav}>
-      <div>Home</div>
-      <div>About</div>
+      <Link href="/">
+        <div>Home</div>
+      </Link>
+      <Link href="/about">
+        <div>About</div>
+      </Link>
     </div>
   );
 }
