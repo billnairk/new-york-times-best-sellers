@@ -1,4 +1,6 @@
 import { BOOK_API } from "@/app/constans";
+import style from "../styles/category.module.css";
+import Image from "next/image";
 
 interface IBookCategory {
   rank: number;
@@ -34,9 +36,13 @@ export default async function BookCategory({ id }: { id: string }) {
   const categoryBestSellers = await getCategoryBestSellers(id);
   return (
     <div>
-      {categoryBestSellers.results.books.map((a: IBookCategory) => {
-        return <div key={a.title}>{a.title}</div>;
-      })}
+      {categoryBestSellers.results.books.map((a: IBookCategory) => (
+        <div className={style.card} key={a.title}>
+          <img src={a.book_image} />
+          <p>{a.author}</p>
+          <p>{a.title}</p>
+        </div>
+      ))}
     </div>
   );
 }
