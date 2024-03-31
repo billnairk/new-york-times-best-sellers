@@ -1,0 +1,15 @@
+.nav {
+  background-color: aquamarine;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  color: hotpink;
+  font-weight: 200;
+}
+
+.nav :hover {
+  scale: 1.2;
+  transition-duration: 0.7s;
+  cursor: pointer;
+  color: cadetblue;
+}

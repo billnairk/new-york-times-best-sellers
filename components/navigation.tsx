@@ -1,3 +1,10 @@
+import style from "../styles/navStyle.module.css";
+
 export default function Navigation() {
-  return <h1>네비게이션</h1>;
+  return (
+    <div className={style.nav}>
+      <div>Home</div>
+      <div>About</div>
+    </div>
+  );
 }
