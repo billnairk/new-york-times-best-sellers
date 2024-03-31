@@ -1,6 +1,7 @@
 import { BOOK_API } from "@/app/constans";
 import style from "../styles/category.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 interface IBookCategory {
   rank: number;
@@ -41,6 +42,9 @@ export default async function BookCategory({ id }: { id: string }) {
           <img src={a.book_image} />
           <p>{a.author}</p>
           <p>{a.title}</p>
+          <Link href={`${a.amazon_product_url}`}>
+            <div>buy Now</div>
+          </Link>
         </div>
       ))}
     </div>
