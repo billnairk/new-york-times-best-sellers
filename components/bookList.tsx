@@ -1,5 +1,6 @@
 import { BOOKLIST_API } from "@/app/constans";
 import Link from "next/link";
+import style from "../styles/bookListStyles.module.css";
 
 interface IBookList {
   list_name: string;
@@ -17,9 +18,13 @@ async function getBookList() {
 export default async function BookList() {
   const bookResponse = await getBookList();
   return (
-    <div>
+    <div className={style.ListBody}>
       {bookResponse.results.map((a: IBookList) => (
-        <Link href={`list/${a.list_name}`} key={a.list_name}>
+        <Link
+          className={style.liBook}
+          href={`list/${a.list_name}`}
+          key={a.list_name}
+        >
           <div>{a.list_name}</div>
         </Link>
       ))}
