@@ -1,5 +1,5 @@
 import { BOOK_API } from "@/app/constans";
-import style from "../styles/category.module.css";
+import style from "../styles/categoryStyles.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -36,14 +36,14 @@ async function getCategoryBestSellers(id: string) {
 export default async function BookCategory({ id }: { id: string }) {
   const categoryBestSellers = await getCategoryBestSellers(id);
   return (
-    <div>
+    <div className={style.categoryBody}>
       {categoryBestSellers.results.books.map((a: IBookCategory) => (
         <div className={style.card} key={a.title}>
-          <img src={a.book_image} />
+          <img className={style.cardImg} src={a.book_image} />
           <p>{a.author}</p>
           <p>{a.title}</p>
           <Link href={`${a.amazon_product_url}`}>
-            <div>buy Now</div>
+            <div className={style.cardBuyButton}>buy Now</div>
           </Link>
         </div>
       ))}
